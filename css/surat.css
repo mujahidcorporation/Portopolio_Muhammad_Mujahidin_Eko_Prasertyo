@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #d1d5db;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FORM */
+.form-box {
+  width: 320px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  font-family: Arial;
+}
+
+/* judul */
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* setiap input group */
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+/* input */
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37,99,235,0.3);
+}
+
+/* tombol */
+.btn-group {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-back {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-back:hover {
+  background: #4b5563;
+}
+/* tombol utama */
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* tombol sekunder */
+.btn-secondary {
+  background: #10b981;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #059669;
+}
+/* =========================
+   SURAT A4 FULL FIX
+========================= */
+.surat {
+  width: 210mm;        /* FIX A4 WIDTH */
+  height: 297mm;       /* FIX A4 HEIGHT */
+  background: white;
+
+  padding: 20mm;
+  box-sizing: border-box;
+
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* JUDUL */
+h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* ISI */
+table td {
+  padding: 5px;
+}
+
+.isi {
+  margin-top: 20px;
+  text-align: justify;
+}
+
+/* TTD */
+.ttd {
+  margin-top: 80px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end; /* tetap di kanan */
+}
+
+/* KUNCI UTAMA: fleksibel & wrap */
+.ttd {
+  margin-top: 80px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  /* ini yang bikin blok ke kanan */
+  align-items: flex-end;
+}
+
+/* INI KUNCI SEJAJAR */
+.ttd .hormat,
+.ttd .nama {
+  width: 260px;        /* semua teks pakai lebar sama */
+  text-align: left;    /* bikin “Hormat Saya” sejajar awal nama */
+
+  margin: 0;
+  word-break: break-word;
+}
+
+/* jarak tanda tangan */
+.space {
+  height: 80px;
+}
+
+/* nama lebih tegas */
+.ttd .nama {
+  font-weight: bold;
+}
+/* =========================
+   PRINT MODE (PDF FIX FULL A4)
+========================= */
+@media print {
+
+  body {
+    background: white;
+  }
+
+  .form-box {
+    display: none;
+  }
+
+  .container {
+    display: block;
+    padding: 0;
+  }
+
+  .surat {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    page-break-after: avoid;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

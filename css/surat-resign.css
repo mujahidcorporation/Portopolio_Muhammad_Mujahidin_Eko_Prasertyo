@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #eef2f7;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FORM */
+.form-box {
+  width: 320px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 7px;
+}
+
+/* BUTTON */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* SURAT A4 */
+.surat {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  padding: 25mm;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.right {
+  text-align: right;
+}
+
+table td {
+  padding: 4px;
+}
+
+.isi {
+  margin-top: 10px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* TTD */
+.ttd {
+  margin-top: 80px;
+  text-align: right;
+}
+
+.space {
+  height: 70px;
+}
+
+/* PRINT */
+@media print {
+  .form-box {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  .container {
+    display: block;
+  }
+
+  .surat {
+    box-shadow: none;
+    margin: 0;
+  }
+}

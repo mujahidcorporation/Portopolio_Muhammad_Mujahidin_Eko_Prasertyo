@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #e5e7eb;
+}
+
+/* layout */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FORM */
+.form-box {
+  width: 340px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  font-family: Arial, sans-serif;
+}
+
+/* TITLE */
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+/* GROUP */
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.form-group label {
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* INPUT */
+.form-group input {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
+/* BUTTON GROUP */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* BUTTON */
+.btn-group button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* PRIMARY */
+.btn-group button:nth-child(1) {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-group button:nth-child(1):hover {
+  background: #1d4ed8;
+}
+
+/* SECOND */
+.btn-group button:nth-child(2) {
+  background: #10b981;
+  color: white;
+}
+
+.btn-group button:nth-child(2):hover {
+  background: #059669;
+}
+
+/* BACK */
+.btn-group button:nth-child(3) {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-group button:nth-child(3):hover {
+  background: #4b5563;
+}
+/* SURAT = FULL A4 */
+.surat {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  padding: 25mm;
+  box-sizing: border-box;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* TEXT */
+.right {
+  text-align: right;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+table td {
+  padding: 4px;
+}
+
+.isi {
+  margin-top: 10px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* TTD */
+.ttd {
+  margin-top: 80px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end; /* tetap di kanan */
+}
+
+/* KUNCI UTAMA: fleksibel & wrap */
+.ttd {
+  margin-top: 80px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  /* ini yang bikin blok ke kanan */
+  align-items: flex-end;
+}
+
+/* INI KUNCI SEJAJAR */
+.ttd .hormat,
+.ttd .nama {
+  width: 260px;        /* semua teks pakai lebar sama */
+  text-align: left;    /* bikin “Hormat Saya” sejajar awal nama */
+
+  margin: 0;
+  word-break: break-word;
+}
+
+/* jarak tanda tangan */
+.space {
+  height: 80px;
+}
+
+/* nama lebih tegas */
+.ttd .nama {
+  font-weight: bold;
+}
+/* BUTTON */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* PRINT MODE */
+@media print {
+
+  body {
+    background: white;
+  }
+
+  .form-box {
+    display: none;
+  }
+
+  .container {
+    display: block;
+    padding: 0;
+  }
+
+  .surat {
+    box-shadow: none;
+    margin: 0;
+  }
+}

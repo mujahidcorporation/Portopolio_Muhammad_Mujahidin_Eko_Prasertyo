@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Surat Izin Kerja</title>
+  <link rel="stylesheet" href="../css/surat.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- FORM -->
+  <div class="form-box">
+  <h2>Form Surat Izin</h2>
+
+  <div class="form-group">
+    <label>Nama</label>
+    <input type="text" id="nama" placeholder="Masukkan nama">
+  </div>
+
+  <div class="form-group">
+    <label>Jabatan</label>
+    <input type="text" id="jabatan" placeholder="Masukkan jabatan">
+  </div>
+
+  <div class="form-group">
+    <label>Keperluan</label>
+    <input type="text" id="keperluan" placeholder="Masukkan keperluan">
+  </div>
+
+  <div class="form-group">
+    <label>Tanggal</label>
+    <input type="date" id="tanggal">
+  </div>
+
+  <div class="btn-group">
+    <button class="btn-primary" onclick="generate()">Buat Surat</button>
+    <button class="btn-secondary" onclick="window.print()">Cetak PDF</button>
+    <button class="btn-back" onclick="window.location.href='../index.html'">
+    ⬅ Kembali
+  </button>
+  </div>
+</div>
+
+  <!-- SURAT -->
+  <div class="surat">
+
+    <h2>SURAT IZIN KERJA</h2>
+    <p class="isi">
+      Saya yang bertanda tangan di bawah ini :
+    </p>
+    <table>
+      <tr><td>Nama</td><td>: <span id="outNama">-</span></td></tr>
+      <tr><td>Jabatan</td><td>: <span id="outJabatan">-</span></td></tr>
+      <tr><td>Keperluan</td><td>: <span id="outKeperluan">-</span></td></tr>
+      <tr><td>Tanggal</td><td>: <span id="outTanggal">-</span></td></tr>
+    </table>
+
+    <p class="isi">
+      Dengan ini mengajukan izin tidak masuk kerja sesuai keperluan di atas.
+    </p>
+
+    <div class="ttd">
+  <p class="hormat">Hormat Saya,</p>
+  <div class="space"></div>
+  <p class="nama">M. Mujahidin Eko Prasetyo</p>
+</div>
+
+  </div>
+
+</div>
+
+<script>
+function generate(){
+  document.getElementById("outNama").innerText = nama.value;
+  document.getElementById("outJabatan").innerText = jabatan.value;
+  document.getElementById("outKeperluan").innerText = keperluan.value;
+  document.getElementById("outTanggal").innerText = tanggal.value;
+}
+</script>
+
+</body>
+</html>

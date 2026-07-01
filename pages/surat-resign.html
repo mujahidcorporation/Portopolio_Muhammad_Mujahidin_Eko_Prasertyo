@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surat Resign</title>
+  <link rel="stylesheet" href="../css/surat-resign.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- FORM -->
+  <div class="form-box">
+
+    <h2>Surat Pengunduran Diri</h2>
+
+    <div class="form-group">
+      <label>Kepada</label>
+      <input type="text" id="kepada" placeholder="HRD PT ...">
+    </div>
+
+    <div class="form-group">
+      <label>Nama</label>
+      <input type="text" id="nama">
+    </div>
+
+    <div class="form-group">
+      <label>Jabatan</label>
+      <input type="text" id="jabatan">
+    </div>
+
+    <div class="form-group">
+      <label>Alasan Pengunduran</label>
+      <input type="text" id="alasan">
+    </div>
+
+    <div class="form-group">
+      <label>Tanggal</label>
+      <input type="text" id="tanggal" placeholder="Jakarta, 12 Juni 2026">
+    </div>
+
+    <div class="btn-group">
+      <button onclick="generate()">Buat Surat</button>
+      <button onclick="window.print()">Cetak PDF</button>
+      <button onclick="window.location.href='../index.html'">⬅ Kembali</button>
+    </div>
+
+  </div>
+
+  <!-- SURAT -->
+  <div class="surat">
+
+    <p class="right" id="outTanggal">-</p>
+
+    <br>
+
+    <p>Kepada Yth.</p>
+    <p id="outKepada">-</p>
+    <p>Di Tempat</p>
+
+    <br>
+
+    <p>Dengan hormat,</p>
+
+    <p class="isi">
+      Melalui surat ini, saya yang bertanda tangan di bawah ini:
+    </p>
+
+    <table>
+      <tr><td>Nama</td><td>: <span id="outNama">-</span></td></tr>
+      <tr><td>Jabatan</td><td>: <span id="outJabatan">-</span></td></tr>
+    </table>
+
+    <p class="isi">
+      Dengan ini mengajukan pengunduran diri dari perusahaan yang Bapak/Ibu pimpin, terhitung sejak tanggal yang telah ditentukan.
+    </p>
+
+    <p class="isi">
+      Adapun alasan pengunduran diri saya adalah <b id="outAlasan">-</b>.
+    </p>
+
+    <p class="isi">
+      Saya mengucapkan terima kasih atas kesempatan dan pengalaman yang telah diberikan selama saya bekerja di perusahaan ini.
+    </p>
+
+    <p class="isi">
+      Saya berharap perusahaan semakin sukses ke depannya.
+    </p>
+
+    <!-- TTD -->
+    <div class="ttd">
+      <p class="hormat">Hormat Saya,</p>
+      <div class="space"></div>
+      <p class="nama" id="outNamaTTD">-</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const get = (id) => document.getElementById(id).value;
+
+function generate(){
+  document.getElementById("outTanggal").innerText = get("tanggal");
+  document.getElementById("outKepada").innerText = get("kepada");
+  document.getElementById("outNama").innerText = get("nama");
+  document.getElementById("outJabatan").innerText = get("jabatan");
+  document.getElementById("outAlasan").innerText = get("alasan");
+  document.getElementById("outNamaTTD").innerText = get("nama");
+}
+</script>
+
+</body>
+</html>
